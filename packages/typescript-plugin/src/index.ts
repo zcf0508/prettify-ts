@@ -45,7 +45,7 @@ function init(modules: { typescript: typeof ts }): ts.server.PluginModule {
         sourceFile,
         position,
         requestBody.options,
-        getVueLanguage(program || info.project),
+        getVueLanguage(info.project) || getVueLanguage(program),
       );
 
       const response: PrettifyResponse = {
